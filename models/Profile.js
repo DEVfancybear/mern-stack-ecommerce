@@ -18,6 +18,10 @@ const ProfileSchema = new mongoose.Schema({
         default: []
     },
     image: String,
+    date: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 module.exports = Profile = mongoose.model('profile', ProfileSchema);

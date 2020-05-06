@@ -1,11 +1,11 @@
 const express = require("express");
-// const connectDB = require("./config/db");
+const connectDB = require("./config/db");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
 //Connect database
-// connectDB();
+connectDB();
 app.get("/", (req, res) => res.send("Welcome to database"));
 // Unlock all cors
 app.use(cors());

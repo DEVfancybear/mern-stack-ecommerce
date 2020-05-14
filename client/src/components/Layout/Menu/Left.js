@@ -1,10 +1,10 @@
 import React from "react";
-import { Menu } from 'antd';
+import { Menu } from "antd";
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
-const Left = () => {
+const Left = (props) => {
   return (
-    <Menu>
+    <Menu mode={props.mode}>
       <Menu.Item key="mail">
         <a href="/">Home</a>
       </Menu.Item>

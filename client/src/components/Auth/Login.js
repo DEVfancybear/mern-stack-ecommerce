@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Icon, Input, Button, Checkbox, Typography } from "antd";
-
+import {Link} from "react-router-dom";
 const Login = () => {
   const { Title } = Typography;
 
@@ -45,7 +45,7 @@ const Login = () => {
               Log in
             </Button>
           </div>
-          Or <a href="/register">Register now!</a>
+          Or <Link to="/register">Register now!</Link>
         </Form.Item>
       </form>
     </div>

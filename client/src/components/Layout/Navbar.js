@@ -1,6 +1,7 @@
 import React from "react";
 import { Drawer, Button, Icon } from 'antd';
 import "./style.css";
+import Left from "./Menu/Left";
 const Navbar = () => {
   return (
     <nav
@@ -11,10 +12,10 @@ const Navbar = () => {
         <a href="/">Logo</a>
       </div>
       <div className="menu__container">
-        {/* <div className="menu_left">
-          <LeftMenu mode="horizontal" />
+        <div className="menu_left">
+          <Left mode="horizontal" />
         </div>
-        <div className="menu_rigth">
+        {/* <div className="menu_rigth">
           <RightMenu mode="horizontal" />
         </div> */}
         <Button className="menu__mobile-button" type="primary">

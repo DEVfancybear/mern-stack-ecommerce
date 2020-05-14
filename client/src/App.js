@@ -1,11 +1,18 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from "react";
 import Navbar from "./components/Layout/Navbar";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Register from "./components/Auth/Register";
 const App = () => {
   return (
-    <Fragment>
-      <Navbar/>
-    </Fragment>
-  )
-}
+    <Router>
+      <Fragment>
+        <Navbar />
+      </Fragment>
+      <Switch>
+        <Route path="/register" component={Register} />
+      </Switch>
+    </Router>
+  );
+};
 
-export default App
+export default App;

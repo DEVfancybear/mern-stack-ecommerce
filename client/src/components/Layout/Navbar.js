@@ -2,6 +2,7 @@ import React from "react";
 import { Drawer, Button, Icon } from 'antd';
 import "./style.css";
 import Left from "./Menu/Left";
+import Right from "./Menu/Right";
 const Navbar = () => {
   return (
     <nav
@@ -15,15 +16,15 @@ const Navbar = () => {
         <div className="menu_left">
           <Left mode="horizontal" />
         </div>
-        {/* <div className="menu_rigth">
-          <RightMenu mode="horizontal" />
-        </div> */}
+        <div className="menu_rigth">
+          <Right mode="horizontal" />
+        </div>
         <Button className="menu__mobile-button" type="primary">
           <Icon type="align-right" />
         </Button>
         <Drawer title="Basic Drawer" placement="right" className="menu_drawer">
-          {/* <LeftMenu mode="inline" />
-            <RightMenu mode="inline" /> */}
+          <Left mode="inline" />
+            <Right mode="inline" />
         </Drawer>
       </div>
     </nav>

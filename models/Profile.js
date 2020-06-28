@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-
-const ProfileSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: {
     type: String, required: true, unique: true, index: true, dropDups: true,
@@ -10,4 +9,6 @@ const ProfileSchema = new mongoose.Schema({
   isAdmin: { type: Boolean, required: true, default: false },
 });
 
-module.exports = Profile = mongoose.model('profile', ProfileSchema);
+const userModel = mongoose.model('User', userSchema);
+
+export default userModel;

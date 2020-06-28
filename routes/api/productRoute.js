@@ -3,7 +3,7 @@ import Product from "../../models/productModel";
 import { isAuth, isAdmin } from "../../middleware/auth";
 
 const router = express.Router();
-
+const limit_ = 10;
 router.get("/", async (req, res) => {
   const category = req.query.category ? { category: req.query.category } : {};
   const searchKeyword = req.query.searchKeyword
@@ -19,7 +19,16 @@ router.get("/", async (req, res) => {
       ? { price: 1 }
       : { price: -1 }
     : { _id: -1 };
-  const products = await Product.find({ ...category, ...searchKeyword }).sort(
+  const pagination = {
+    page: parseInt(req.query.page) || 1,
+    limit: parseInt(req.query.limit) || limit_,
+    collation: { locale: "en" },
+    customLabels: {
+      totalDocs: "totalResults",
+      docs: "events",
+    },
+  };
+  const products = await Product.find({ ...category, ...searchKeyword, ...pagination }).sort(
     sortOrder
   );
   res.send(products);
